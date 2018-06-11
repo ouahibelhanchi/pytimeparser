@@ -108,4 +108,7 @@ def parse(text):
 
         kwargs[unit] = kwargs.get(unit, 0) + value
 
+    if not kwargs:
+        raise ValueError('No time expression recognized')
+
     return datetime.timedelta(**kwargs)

@@ -20,6 +20,11 @@ def test_parse_non_string():
         parse(None)
 
 
+def test_parse_no_expression():
+    with pytest.raises(ValueError):
+        parse('no time')
+
+
 def test_parse():
     output = parse('4 years, 3 months and 4 days')
     expected_output = datetime.timedelta(
